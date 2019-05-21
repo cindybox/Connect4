@@ -1,10 +1,20 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Source Code Pro', monospace, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #777;
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  justify-content: center;
+  overflow: hidden;
 }
 
 code {
@@ -12,22 +22,6 @@ code {
     monospace;
 }
 
-body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-
-  position: absolute;
-  font-family: 'Source Code Pro', monospace;
-  text-align: center;
-
-  font-size: 1rem;
-
-  justify-content: center;
-
-  overflow: hidden;
-}
 *:focus {
   outline: none;
 }
@@ -38,8 +32,6 @@ body {
   border-radius: 50px;
   display: flex;
   flex-flow: row wrap;
-
-  /* box-shadow: 2px 5px 12px rgba(97, 41, 22, 0.7); */
   position: relative;
 }
 
@@ -80,6 +72,9 @@ p {
 .status {
   margin: 10px auto;
   position: relative;
+  font-size: 2rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
 }
 .game-board {
   margin: 0 auto;
@@ -90,14 +85,12 @@ p {
   display: flex;
   flex-flow: row wrap;
   background-color: #d6d0b2;
-  /* box-shadow: 2px 5px 12px rgba(97, 41, 22, 0.7); */
   position: relative;
 }
 button,
 .square {
   color: #aaafb7;
   position: relative;
-  /* outline: none; */
   border: 1px #848378 solid;
   background-color: #848378;
   float: left;
@@ -111,9 +104,6 @@ button,
 .squares-blue {
   color: #aaafb7;
   position: relative;
-
-  border: 1px #848378 solid;
-
   float: left;
   width: 65px;
   height: 65px;
@@ -130,7 +120,6 @@ button,
   position: relative;
   outline: none;
   border: 0px #dd6b4d solid;
-
   float: left;
   width: 65px;
   height: 65px;
@@ -142,5 +131,5 @@ button,
 .squares:hover,
 .squares-blue:hover,
 .squares-orange:hover {
-  curser: pointer;
+  cursor: pointer;
 }
