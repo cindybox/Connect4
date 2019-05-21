@@ -148,7 +148,7 @@ class App extends React.Component {
               />
             </div>
           </div>
-          <div class="status">{status}</div>
+          <div className="status">{status}</div>
         </div>
 
         <div className="game-board">
