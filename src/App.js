@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
 
 function Square(props) {
@@ -70,12 +71,17 @@ class App extends React.Component {
     const j = e.target.id[1];
     // clone squares to preserve immutibility
     const squaresTemp = this.state.squares.slice();
-    if (!(calculateWinner(squaresTemp) || squaresTemp[i][j])) {
-      squaresTemp[i][j] = this.state.xIsNext ? '1' : '2';
-      this.setState({
-        squares: squaresTemp,
-        xIsNext: !this.state.xIsNext
-      });
+    if (!calculateWinner(squaresTemp)) {
+      for (let k = 5; k >= 0; k--) {
+        if (squaresTemp[k][j] === null) {
+          squaresTemp[k][j] = this.state.xIsNext ? '1' : '2';
+          this.setState({
+            squares: squaresTemp,
+            xIsNext: !this.state.xIsNext
+          });
+          break;
+        }
+      }
     }
   }
 
@@ -125,7 +131,10 @@ class App extends React.Component {
       <div className="game">
         <div className="game-info">
           <div className="nav-bar">
-            <button className="new-game" onClick={this.startNewGame}>
+            <button
+              className="btn btn-dark new-game"
+              onClick={this.startNewGame}
+            >
               New Game
             </button>
             <div className="player">
